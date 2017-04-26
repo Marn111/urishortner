@@ -1,4 +1,5 @@
 require "base64"
+
 class Api::UrlsController < ActionController::Base
   skip_before_filter :verify_authenticity_token
 
@@ -16,6 +17,14 @@ class Api::UrlsController < ActionController::Base
 		end
 	end
 
-	
+	def goto_full_address
+		@url = Url.find_by(short_url: ENV['service_host'] + params[:short_url])
+		if @url.present?
+			redirect_to @url.full_url
+		else
+			return render json: {message: "Invalid short url."}, status: 400
+		end
+		
+	end
 
 end

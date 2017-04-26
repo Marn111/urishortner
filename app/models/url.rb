@@ -1,9 +1,12 @@
 class Url < ActiveRecord::Base
 
-	before_save :shortened_url
-	def shortened_url
-		self.full_url_hash = Digest::MD5.hexdigest(self.full_url + "with url shortner service")
-		self.short_url = self.full_url_hash.slice(0..6) 
+	validates :full_url, url: true
+	before_save :make_shortened_url
+
+	def make_shortened_url
+		encoded_url = Digest::MD5.hexdigest(self.full_url + "with url shortner service")
+		self.full_url_hash = encoded_url
+		self.short_url = ENV['service_host'] + encoded_url.slice(0..6) 
 	end
-	
+
 end
