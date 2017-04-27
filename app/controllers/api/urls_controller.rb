@@ -1,7 +1,6 @@
 require "base64"
-
 class Api::UrlsController < ActionController::Base
-  skip_before_filter :verify_authenticity_token
+	skip_before_filter :verify_authenticity_token
 
 	def shortner
 		@url = Url.find_by(full_url: params[:full_url])
@@ -17,6 +16,9 @@ class Api::UrlsController < ActionController::Base
 
 	def goto_full_address
 		@url = Url.find_by(short_url: ENV['service_host'] + params[:short_url])
+		ahoy.track "Processed #{controller_name}##{action_name}", request.filtered_parameters
+		# return render json: {event: Ahoy::Event.all}
+
 		if @url.present?
 			redirect_to @url.full_url
 		else

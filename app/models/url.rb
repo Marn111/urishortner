@@ -2,7 +2,7 @@ class Url < ActiveRecord::Base
 
 	validates :full_url, url: true
 	before_save :make_shortened_url
-
+	
 	def make_shortened_url
 		encoded_url = Digest::MD5.hexdigest(self.full_url + "with url shortner service")
 		self.full_url_hash = encoded_url
