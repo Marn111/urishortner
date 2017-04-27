@@ -15,7 +15,7 @@ class Api::UrlsController < ActionController::Base
 	end
 
 	def goto_full_address
-		@url = Url.find_by(short_url: ENV['service_host'] + params[:short_url])
+		@url = Url.find_by(short_url: "#{ENV['service_host']}#{params[:short_url]}")
 		ahoy.track "Processed #{controller_name}##{action_name}", request.filtered_parameters
 		ahoy.track_visit
 		if @url.present?
