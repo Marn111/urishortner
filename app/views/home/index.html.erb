@@ -1,0 +1,34 @@
+<style>
+  html,body{
+    height: 100%;
+  }
+  #error_msg{
+    color: #FF3333;
+  }
+  i{
+    color: #001cee;
+  }
+
+</style>
+<div class="container fill">
+      <div class="row logo">
+        <h1 class="text-center text-white">URL Shortner Service</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-12 col-xs-12"></div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+
+          <form id="shortnerForm" method="post">
+            <div class="help" id="error_msg"></div>
+            <input type="text" name="full_url" id="url[full_url]" placeholder="Enter Full Url">
+            <input type="submit" value="Submit">
+          </form>
+          <h5 id="shortnerUrl"></h5>
+
+        </div>
+        <div class="col-md-3 col-sm-12 col-xs-12"></div>
+      </div>
+
+</div>
+
