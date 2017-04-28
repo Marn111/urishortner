@@ -3,10 +3,13 @@
 Application is hosted on Heroku Server.
 
 ## APIs
-------------
-[Url Shortner api](http://urishortner.herokuapp.com/api/urls/shortner)
+
+Url Shortner api => [http://urishortner.herokuapp.com/api/urls/shortner](http://urishortner.herokuapp.com/api/urls/shortner)
+
 method: Post
+
 Parameters: {full_url: "http://www.gogle.com"}
+
 => {
   "id": 1,
   "full_url": "http://www.google.com",
@@ -16,11 +19,16 @@ Parameters: {full_url: "http://www.gogle.com"}
   "updated_at": "2017-04-26T08:32:04.267Z"
 }
 
-[Go to full address](http://urishortner.herokuapp.com/70ff3d2)
+
+Go to full address => [http://urishortner.herokuapp.com/70ff3d2](http://urishortner.herokuapp.com/70ff3d2)
+
 method: Get
 
-[Get visits of by short_url](http://urishortner.herokuapp.com/api/urls/:id/visits)
+
+Get visits of by short_url => [http://urishortner.herokuapp.com/api/urls/:id/visits](http://urishortner.herokuapp.com/api/urls/:id/visits)
+
 method: Get
+
 => [
   {
     "id": "9cb2d01e-c3f9-4f77-9e77-af0fae9ece4d",
@@ -58,17 +66,15 @@ method: Get
 
 
 ## Admin
-------------
 
 Admin panel is created in order to check saved data.
 
-[Go to Admin Panel](http://urishortner.herokuapp.com/admin)
+Go to Admin Panel => [http://urishortner.herokuapp.com/admin](http://urishortner.herokuapp.com/admin)
 
 
 ## Home Page
-------------
 
-[Go to Home page](http://urishortner.herokuapp.com)
+Go to Home page => [http://urishortner.herokuapp.com](http://urishortner.herokuapp.com)
 
 
 Specifications
