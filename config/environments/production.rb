@@ -78,5 +78,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   ENV['service_host'] = "http://urishortner.herokuapp.com/" 
-  
+  config.assets.initialize_on_precompile = true
 end
