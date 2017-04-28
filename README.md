@@ -5,9 +5,7 @@ Application is hosted on Heroku Server.
 ## APIs
 
 Url Shortner api => [http://urishortner.herokuapp.com/api/urls/shortner](http://urishortner.herokuapp.com/api/urls/shortner)
-
 method: Post
-
 Parameters: {full_url: "http://www.gogle.com"}
 
 => {
@@ -21,12 +19,10 @@ Parameters: {full_url: "http://www.gogle.com"}
 
 
 Go to full address => [http://urishortner.herokuapp.com/70ff3d2](http://urishortner.herokuapp.com/70ff3d2)
-
 method: Get
 
 
 Get visits of by short_url => [http://urishortner.herokuapp.com/api/urls/:id/visits](http://urishortner.herokuapp.com/api/urls/:id/visits)
-
 method: Get
 
 => [
