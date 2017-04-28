@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/admin', to: 'admin/dashboard#index', as: 'cms_root'
   get '/:short_url', to: 'api/urls#goto_full_address', as: 'custom_root'
-
+  post '/', to: 'home#index'
+  
   namespace :api do
     post 'urls/shortner', to: 'urls#shortner'
   end
