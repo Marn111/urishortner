@@ -16,14 +16,22 @@ class Api::UrlsController < ActionController::Base
 
 	def goto_full_address
 		@url = Url.find_by(short_url: "#{ENV['service_host']}#{params[:short_url]}")
-		ahoy.track "Processed #{controller_name}##{action_name}", request.filtered_parameters
-		ahoy.track_visit
 		if @url.present?
+			ahoy.track "Processed #{controller_name}##{action_name}", request.filtered_parameters
+			ahoy.track_visit
 			redirect_to @url.full_url
 		else
 			return render json: {message: "Invalid short url."}, status: 400
 		end
-		
+	end
+
+	def visits
+		@url = Url.find_by_id(params[:id])
+		if @url.present?
+			return render json: @url.visits, status: 200
+		else
+			return render json: {message: "Invalid short url id."}, status: 400
+		end
 	end
 
 end

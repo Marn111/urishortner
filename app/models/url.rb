@@ -1,5 +1,5 @@
 class Url < ActiveRecord::Base
-
+	has_many :visits, dependent: :destroy
 	validates :full_url, url: true
 	before_save :make_shortened_url
 	

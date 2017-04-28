@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   
   namespace :api do
     post 'urls/shortner', to: 'urls#shortner'
+    get 'urls/:id/visits', to: 'urls#visits'
   end
 end
