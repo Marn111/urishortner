@@ -3,6 +3,7 @@ $("#error_msg").hide();
 $("form#shortnerForm").keyup(function(e)
 {
     $("#error_msg").fadeOut();
+    $("#shortnerUrl").fadeOut();
 });
 
 var values = window.localStorage.getItem('shortnerForm');
