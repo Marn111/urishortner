@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_url: http://www.google.com
+  full_url_hash: 70ff3d2827792ec4a7de16ab0e9398ec
+  short_url: http://localhost:3000/70ff3d2
+
+two:
+  full_url: https://semaphoreci.com/blog/2014/01/14/rails-testing-antipatterns-fixtures-and-factories.html
+  full_url_hash: 1125fcbf438d9c33fff61aea29bcde8d
+  short_url: http://localhost:3000/1125fcb

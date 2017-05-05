@@ -5,8 +5,8 @@ class Visit < ActiveRecord::Base
   before_save :save_with_url
   def save_with_url
   	url = Url.where(short_url: self.landing_page).first
-  	p "url_id: #{url.id}"
   	if url.present?
+      p "url_id: #{url.id}"
   		self.url_id = url.id
       p "added"
   	end

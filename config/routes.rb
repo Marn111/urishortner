@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/', to: 'home#index'
   
   namespace :api do
+    resources :urls, only: [:create]
     post 'urls/shortner', to: 'urls#shortner'
     get 'urls/:id/visits', to: 'urls#visits'
   end
